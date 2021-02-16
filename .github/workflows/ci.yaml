@@ -139,8 +139,8 @@ jobs:
         run: |
           python -m cibuildwheel --output-dir wheelhouse
         env:
-          - CIBW_ARCHS_LINUX: ${{ matrix.arch }}
-          - CIBW_BUILD: cp38-manylinux_aarch64
+          CIBW_ARCHS_LINUX: ${{ matrix.arch }}
+          CIBW_BUILD: cp38-manylinux_aarch64
 
       - uses: actions/upload-artifact@v2
         with:
