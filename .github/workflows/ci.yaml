@@ -131,7 +131,7 @@ jobs:
       - name: Install cibuildwheel
         run: |
           python -m pip install cibuildwheel~=1.8.0
-      - name: Build wheels
+      - name: Build wheelss
         run: |
           python -m cibuildwheel --output-dir wheelhouse
         env:
