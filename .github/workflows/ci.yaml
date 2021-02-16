@@ -140,7 +140,7 @@ jobs:
           python -m cibuildwheel --output-dir wheelhouse
         env:
           CIBW_ARCHS_LINUX: ${{ matrix.arch }}
-          CIBW_BUILD: cp38-manylinux_aarch64
+          CIBW_SKIP: "pp* cp27-* cp35-*"
 
       - uses: actions/upload-artifact@v2
         with:
