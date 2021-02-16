@@ -110,7 +110,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04]
-        python_version: ['3.8']
         arch: [aarch64]
     steps:
       - uses: actions/checkout@v2
@@ -132,9 +131,9 @@ jobs:
       - name: Install cibuildwheel
         run: |
           python -m pip install cibuildwheel
-      - name: python version
+      - name: cibuildwheel version
         run: |
-          python --version
+          cibuildwheel --version
       - name: Build wheels
         run: |
           python -m cibuildwheel --output-dir wheelhouse
