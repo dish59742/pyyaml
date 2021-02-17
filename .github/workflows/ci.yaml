@@ -137,6 +137,7 @@ jobs:
         env:
           CIBW_ARCHS_LINUX: ${{ matrix.arch }}
           CIBW_SKIP: "pp* cp27-* cp35-*"
+          PYYAML_FORCE_CYTHON: 1
 
       - uses: actions/upload-artifact@v2
         with:
