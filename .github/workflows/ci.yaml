@@ -137,7 +137,7 @@ jobs:
         env:
           CIBW_ARCHS_LINUX: ${{ matrix.arch }}
           CIBW_SKIP: "pp* cp27-* cp35-*"
-          CIBW_PROJECT_REQUIRES_PYTHON: "build==0.1.0 Cython"
+          CIBW_PROJECT_REQUIRES_PYTHON: build==0.1.0 Cython
           PYYAML_FORCE_CYTHON: 1
           PYYAML_FORCE_LIBYAML: 1
           C_INCLUDE_PATH: libyaml/include:${C_INCLUDE_PATH:-}
