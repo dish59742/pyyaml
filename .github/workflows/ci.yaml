@@ -138,6 +138,10 @@ jobs:
           CIBW_ARCHS_LINUX: ${{ matrix.arch }}
           CIBW_SKIP: "pp* cp27-* cp35-*"
           PYYAML_FORCE_CYTHON: 1
+          PYYAML_FORCE_LIBYAML: 1
+          C_INCLUDE_PATH: libyaml/include:${C_INCLUDE_PATH:-}
+          LIBRARY_PATH: libyaml/src/.libs:${LIBRARY_PATH:-}
+          LD_LIBRARY_PATH: libyaml/src/.libs:${LD_LIBRARY_PATH:-}
 
       - uses: actions/upload-artifact@v2
         with:
