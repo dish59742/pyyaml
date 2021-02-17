@@ -137,12 +137,12 @@ jobs:
         env:
           CIBW_ARCHS_LINUX: ${{ matrix.arch }}
           CIBW_SKIP: "pp* cp27-* cp35-*"
-          CIBW_BEFORE_ALL: python -m pip install --upgrade pip && python -m pip install build==0.1.0 Cython && export export PYYAML_FORCE_CYTHON=1 && export PYYAML_FORCE_LIBYAML=1 && export C_INCLUDE_PATH=libyaml/include && export LIBRARY_PATH=libyaml/src/.libs && export LD_LIBRARY_PATH=libyaml/src/.libs
+          CIBW_BEFORE_ALL: python -m pip install --upgrade pip && export PYYAML_FORCE_CYTHON=1 && export PYYAML_FORCE_LIBYAML=1 && export C_INCLUDE_PATH=libyaml/include && export LIBRARY_PATH=libyaml/src/.libs && export LD_LIBRARY_PATH=libyaml/src/.libs && export python -m pip install Cython
           #PYYAML_FORCE_CYTHON: 1
           #PYYAML_FORCE_LIBYAML: 1
           #C_INCLUDE_PATH: libyaml/include:${C_INCLUDE_PATH:-}
           ##LIBRARY_PATH: libyaml/src/.libs:${LIBRARY_PATH:-}
-          LD_LIBRARY_PATH: libyaml/src/.libs:${LD_LIBRARY_PATH:-}
+          #LD_LIBRARY_PATH: libyaml/src/.libs:${LD_LIBRARY_PATH:-}
 
       - uses: actions/upload-artifact@v2
         with:
