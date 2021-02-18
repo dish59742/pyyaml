@@ -145,6 +145,7 @@ jobs:
             && export C_INCLUDE_PATH=libyaml/include
             && export LIBRARY_PATH=libyaml/src/.libs
             && export LD_LIBRARY_PATH=libyaml/src/.libs
+          CIBW_TEST_COMMAND: "pwd && ls && python packaging/build/smoketest.py"
 
       - uses: actions/upload-artifact@v2
         with:
